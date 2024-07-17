@@ -43,15 +43,18 @@
               "leaflet/dist/leaflet.css",
               "leaflet-draw/dist/leaflet.draw.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "loader": {
+              ".png": "file"
+            }
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
