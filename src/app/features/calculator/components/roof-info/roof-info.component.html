@@ -1,0 +1,38 @@
+<div class="roof-info">
+    <mat-form-field>
+        <mat-label>Површина крова (м2)</mat-label>
+        <input matInput type="number" value="10" required />
+    </mat-form-field>
+
+    <div class="angle">
+        <div *ngIf="!this.manualMode; else manual" class="angle-input">
+            <mat-form-field class="default">
+                <mat-label>Нагиб крова (степени):</mat-label>
+                <mat-select [(value)]="angleValue">
+                    <mat-option *ngFor="let item of angleValues" [value]="item">{{item}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <ng-template #manual>
+            <mat-form-field class="angle-input">
+                <mat-label>Нагиб крова (степени)</mat-label>
+                <input matInput type="number" value="30" required />
+            </mat-form-field>
+        </ng-template>
+
+        <button mat-raised-button class="no-top-margin" (click)="toggleManualMode()">
+            {{ angleButtonText }}
+        </button>
+    </div>
+    <div class="example-label-container">
+        <p id="example-name-label" class="example-name-label">Орјентација крова: <b>{{ slider.value }}</b>
+        </p>
+    </div>
+    <div class="slider-labels">
+        <p *ngFor="let item of sliderLabels">{{item}}</p>
+    </div>
+    <mat-slider class="example-margin" [min]="sliderParams.min" [max]="sliderParams.max" [step]="sliderParams.step"
+        showTickMarks discrete>
+        <input matSliderThumb [(ngModel)]="sliderValue" #slider />
+    </mat-slider>
+</div>

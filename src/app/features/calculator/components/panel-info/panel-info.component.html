@@ -1,0 +1,18 @@
+<ng-container *ngIf="!isManualMode; else elseTemplate">
+    <mat-form-field class="margin">
+        <mat-label>Изаберите технологију модула за инсталацију:</mat-label>
+        <mat-select [(value)]="selected">
+            <mat-option *ngFor="let item of panelType" value={{item}}>{{item}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <p>
+        Изабрали сте: {{ selected }}. (neke osnovne informacije o tehnologiji ovde)
+    </p>
+</ng-container>
+<ng-template #elseTemplate>
+
+</ng-template>
+
+<button mat-raised-button (click)="toggleManualMode()">
+    {{ buttonText }}
+</button>

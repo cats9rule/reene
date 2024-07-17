@@ -1,0 +1,39 @@
+@use '../../styles/chat';
+
+.chat-bottom {
+    border-top-left-radius: chat.$border-radius;
+    border-top-right-radius: chat.$border-radius;
+    height: calc(500px - 2.5 * chat.$header-height - chat.$input-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chat-header {
+    width: 100%;
+    height: chat.$header-height;
+    display: grid;
+    grid-template-columns: 1fr chat.$header-height;
+    margin: 0px;
+    margin-bottom: 50px;
+    border-top-left-radius: chat.$border-radius;
+    border-top-right-radius: chat.$border-radius;
+}
+
+.chat-title {
+    margin-bottom: 0px !important;
+}
+
+app-chat-input {
+    margin: auto;
+    display: block;
+    width: 100%;
+}
+
+// p {
+//     padding: calc((chat.$header-height - 32px) / 2);
+// }
+
+// button {
+//     margin: 0px;
+// }

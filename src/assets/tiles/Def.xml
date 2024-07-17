@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageTile level="8" cx="256" cy="256" ext="jpg">
+	<ImageBox>
+		<Box>
+			<coordinates>627000.0000000000,4777000.0000000000 630600.0000000000,4782400.0000000000</coordinates>
+		</Box>
+	</ImageBox>
+	<TileBox>
+		<Box>
+			<coordinates>626100.0000000000,4777000.0000000000 631500.0000000000,4782400.0000000000</coordinates>
+		</Box>
+	</TileBox>
+</ImageTile>

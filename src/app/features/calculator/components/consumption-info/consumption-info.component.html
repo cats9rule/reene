@@ -1,0 +1,21 @@
+<div class="consumption-info">
+    <div class="angle">
+        <div *ngIf="!this.monthlyMode; else manual">
+            <mat-form-field class="field">
+                <mat-label>Годишња потрошња у вишој тарифи (kWh)</mat-label>
+                <input matInput type="number" value="2500" required />
+            </mat-form-field>
+        </div>
+        <ng-template #manual>
+            <div class="month-grid">
+                <mat-form-field *ngFor="let m of months" class="angle-input">
+                    <mat-label>{{ m }}</mat-label>
+                    <input matInput type="number" value="450" required />
+                </mat-form-field>
+            </div>
+        </ng-template>
+    </div>
+    <button mat-raised-button (click)="toggleMonthlyMode()">
+        {{ modeButtonText }}
+    </button>
+</div>

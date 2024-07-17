@@ -1,0 +1,59 @@
+<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Лоцирај адресу</ng-template>
+            <mat-form-field>
+                <mat-label>Адреса</mat-label>
+                <input matInput placeholder="Улица број" formControlName="firstCtrl" required />
+            </mat-form-field>
+            <div>
+                <button mat-flat-button matStepperNext [color]="nextBtnColor">Лоцирај на мапи</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Позиционирај кров</ng-template>
+            <div class="map"><app-custom-map></app-custom-map></div>
+            <div>
+                <button mat-flat-button matStepperPrevious [color]="backBtnColor">Назад</button>
+                <button mat-flat-button [color]="analyzeRoofColor" (click)="openSegmentDialog()">
+                    Анализирај кров
+                </button>
+                <button mat-flat-button matStepperNext [disabled]="!canGenerateRoofData" [color]="roofDataColor">
+                    Генериши податке о крову
+                </button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>Информације о крову</ng-template>
+            <app-roof-info></app-roof-info>
+            <div>
+                <button mat-flat-button matStepperPrevious [color]="backBtnColor">Назад</button>
+                <button mat-flat-button matStepperNext [color]="nextBtnColor">Даље</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form [formGroup]="fourthFormGroup">
+            <ng-template matStepLabel>Избор панела</ng-template>
+            <app-panel-info></app-panel-info>
+            <div>
+                <button mat-flat-button matStepperPrevious [color]="backBtnColor">Назад</button>
+                <button mat-flat-button matStepperNext [color]="nextBtnColor">Даље</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Информације о годишњој потрошњи</ng-template>
+        <app-consumption-info></app-consumption-info>
+        <div>
+            <button mat-flat-button matStepperPrevious [color]="backBtnColor">Назад</button>
+            <button mat-flat-button color="accent" (click)="generatePlan()">
+                Генериши план
+            </button>
+        </div>
+    </mat-step>
+</mat-stepper>

@@ -1,0 +1,14 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav" [mode]="'side'" [opened]="opened">
+        <mat-toolbar>Мени</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item href="/info">Информације</a>
+            <a mat-list-item href="/calculator">Калкулатор за постављање панела</a>
+            <a mat-list-item href="#">Помоћ</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<app-chat-fab></app-chat-fab>

@@ -1,0 +1,63 @@
+@use '../../calculator';
+
+$slider-part: 5%;
+
+.roof-info {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+mat-form-field {
+    width: 40%;
+}
+
+.angle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 40%
+}
+
+.angle-input {
+    width: 100%;
+}
+
+button {
+    width: max-content;
+    height: max-content;
+    min-height: 40px;
+    padding: 5px;
+}
+
+.example-label-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    max-width: 284px;
+}
+
+mat-slider {
+    width: calc($slider-part * 8);
+    margin: $slider-part;
+    margin-top: 0px;
+}
+
+.slider-labels {
+    width: calc($slider-part * 10);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.default {
+    width: 100% !important;
+}
+
+.no-top-margin {
+    margin-top: 2px;
+}

@@ -1,0 +1,19 @@
+@use '../../calculator';
+
+.map {
+    width: 50vw;
+    height: 50vh;
+    margin-top: 2%;
+}
+
+.mat-stepper-vertical {
+    margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+    margin-top: 16px;
+}
+
+mat-form-field {
+    width: 40%;
+}

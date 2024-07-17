@@ -1,0 +1,11 @@
+<div class="chat-bottom">
+    <mat-toolbar class="chat-header" color="accent">
+        <p class="chat-title">Четбот</p>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+            (click)="closeChat()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar>
+    <app-message-list [messages]="messages"></app-message-list>
+    <app-chat-input></app-chat-input>
+</div>

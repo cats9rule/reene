@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'app/features/chatbot/styles/chat';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-bottom-sheet-container {
+    @include chat.sheet;
+    border-top-left-radius: chat.$border-radius !important;
+    border-top-right-radius: chat.$border-radius !important;
+    width: chat.$width;
+    overflow: hidden !important;
+}
+
+app-chat-bottom-sheet {
+    @include chat.round-corners;
+    height: 100%;
+    display: block;
+}

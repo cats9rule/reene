@@ -1,0 +1,18 @@
+$header-height: 64px;
+$border-radius: 10px;
+$input-height: 46px;
+$width: 512px;
+
+@mixin round-corners {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+}
+
+@mixin sheet {
+    position: fixed;
+    right: 20px;
+    bottom: 0;
+    padding: 0px !important;
+    @include round-corners();
+    height: 500px;
+}
